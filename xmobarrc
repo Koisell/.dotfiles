@@ -1,0 +1,21 @@
+
+Config { font = "xft:Monospace Regular:size=10:antialias=true"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = Top
+       , commands = [ Run Weather "LFPO" ["-t"," <tempC>C","-L","5","-H","35","--normal","green","--high","red","--low","lightblue"] 36000
+                    , Run MultiCpu [  "--template", "Cpus <total0>% <total1>% <total2>% <total3>% <total4>% <total5>% <total6>% <total7>%"
+                                    , "--Low","3"
+                                    , "--High","70"
+                                    , "--normal","green"
+                                    , "--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Swap [] 10
+                    , Run Date "%a %_d %b %H:%M" "date" 10
+                    , Run StdinReader
+                    , Run Com "nmcli" ["-g", "SSID,RATE,BARS", "device", "wifi"] "" 10
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %multicpu% | %memory% * %swap% | <fc=#00ff00>%nmcli%</fc> | <fc=#ee9a00>%date%</fc> | %LFPO%"
+}
