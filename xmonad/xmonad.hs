@@ -93,7 +93,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
+    , ((modm,               xK_p     ), spawn "rofi -modi drun -theme /usr/share/rofi/themes/Monokai.rasi -show drun -show-icons")
     
     -- control keyboard
     , ((modm .|. shiftMask, xK_u), spawn "setxkbmap us")
