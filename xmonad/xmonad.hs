@@ -340,7 +340,14 @@ myEventHook = docksEventHook
 --
 --myStartupHook = return ()
 
-myStartupHook = setWMName "LG3D"
+myStartupHook = do
+                  setWMName "LG3D"
+                  spawn "feh --bg-scale ~/Pictures/wallpaper.png"
+                  spawn "dropbox start"
+                  spawn "redshift -l 49:2 -t 6500:2700"
+                  spawn "xscreensaver -no-splash"
+                  spawn "xrandr --output DVI-D-1 --left-of HDMI-1 --primary"
+                  return ()
 
 myLogHook xmproc = dynamicLogWithPP xmobarPP {
 							ppOutput = hPutStrLn xmproc,
