@@ -32,8 +32,12 @@ alias vlcZerator="streamlink twitch.tv/zerator "
 # Alias lié au git.
 alias gitconf_insa="git config --global user.name nfrancois; git config --global user.email nicolas.francois@insa-rouen.fr;git config --global push.default matching; echo GitInsa"
 alias gitconf_github="git config --global user.name Koisell; git config --global user.email koisell.dev@gmail.com;git config --global push.default matching; echo GitHub"
+alias git_prune_local="git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}'"
 alias commit="git commit -am"
 alias gadd="git add"
 alias gadd_all="git add --all"
 alias gpush="git push"
 alias gpull="git pull"
+
+# Alias grallvm
+alias gpants="JDK_HOME=$GRALL_HOME ./pants"
