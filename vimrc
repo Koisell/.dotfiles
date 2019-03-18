@@ -137,6 +137,7 @@ let g:shebang#shebangs = {
 " BUNDLE: YouCompleteMe
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:AutoClosePreserveDotReg = 0 " fix autoclose bug
 
 " BUNDLE: fzf
 set rtp+=~/.fzf

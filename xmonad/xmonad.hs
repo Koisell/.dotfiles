@@ -346,7 +346,7 @@ myStartupHook = do
                   spawn "dropbox start"
                   spawn "redshift -l 49:2 -t 6500:2700"
                   spawn "xscreensaver -no-splash"
-                  spawn "xrandr --output DVI-D-1 --left-of HDMI-1 --primary"
+                 -- spawn "xrandr --output DVI-D-1 --left-of HDMI-1 --primary"
                   return ()
 
 myLogHook xmproc = dynamicLogWithPP xmobarPP {
