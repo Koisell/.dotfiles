@@ -12,6 +12,7 @@ import XMonad.Actions.GridSelect
 import XMonad.Layout.Tabbed
 import XMonad.Layout.Named
 import XMonad.Layout.ToggleLayouts
+import XMonad.Layout.TwoPane
 import Control.Monad (liftM2)
 
 --for xmobar
@@ -145,11 +146,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Swap the focused window with the previous window
     , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
 
-    -- Shrink the master area
-    , ((modm,               xK_h     ), sendMessage Shrink)
-
     -- Expand the master area
-    , ((modm,               xK_l     ), sendMessage Expand)
+    , ((modm,               xK_h     ), sendMessage Expand)
+
+    -- Shrink the master area
+    , ((modm .|. shiftMask, xK_h     ), sendMessage Shrink)
 
     -- Push window back into tiling
     , ((modm,               xK_t     ), withFocused $ windows . W.sink)
@@ -251,7 +252,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- smartBorders enleve les bord en plein écran
 --myLayout = avoidStruts $ noBorders tabbed ||| Grid
 myLayout =  (toggleLayouts $ noBorders Full) $ -- toggle fullscreen
-    avoidStruts $ smartBorders $ tiled ||| Mirror tiled ||| noBorders tabbed
+    avoidStruts $ smartBorders $ tiled ||| Mirror tiled ||| noBorders tabbed 
 --myLayout = avoidStruts ( smartBorders $ tiled ||| Mirror tiled ) ||| noBorders Full -- "true full"
   where
     -- default tiling algorithm partitions the screen into two panes
