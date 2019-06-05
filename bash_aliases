@@ -20,7 +20,6 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ping="prettyping --nolegend"
 alias cat="bat"
 alias ls="exa"
-alias gbt="JAVA_HOME=/opt/graalvm-1.0.0-rc1 sbt"
 alias vi="vimx"
 alias vim="vimx"
 
@@ -41,3 +40,4 @@ alias gpull="git pull"
 
 # Alias grallvm
 alias gpants="JDK_HOME=$GRALL_HOME ./pants"
+alias gbt="JAVA_HOME=/opt/graalvm-1.0.0-rc1 sbt"
