@@ -94,6 +94,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'wincent/terminus'
 Plug 'Townk/vim-autoclose'
 Plug 'RRethy/vim-illuminate'
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plug 'sbdchd/vim-shebang', { 'for': ['python', 'ruby', 'sh'] }
 Plug 'idris-hackers/idris-vim', { 'for': 'idris' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
