@@ -10,7 +10,7 @@ alias ChaineTwitch="~/.MyScript/Python/getChannelInfo.py"
 
 #alias Alias
 alias clean="tput reset"
-alias yolo="ping -c 10 "
+alias yolo="echo '¯\\_(ツ)_/¯'"
 alias hunt="ps -aux | grep "
 alias ouvrir="gnome-open "
 alias la="ls -la"
