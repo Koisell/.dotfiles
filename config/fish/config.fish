@@ -17,7 +17,7 @@ end
 # User specific environment
 set PATH "$HOME/.local/bin:$HOME/bin:$PATH"
 set PATH "/opt/dependency-check/bin:$PATH"
-set PATH "/opt/terraform/terraform_0.12.0_linux_amd64:$PATH"
+set PATH "/opt/terraform/terraform_0.12.7_linux_amd64:$PATH"
 set PATH "/opt/packer/bin/packer:$PATH"
 export PATH
 
