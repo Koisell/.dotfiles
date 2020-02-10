@@ -19,6 +19,7 @@ set PATH "$HOME/.local/bin:$HOME/bin:$PATH"
 set PATH "/opt/dependency-check/bin:$PATH"
 set PATH "/opt/terraform/terraform_0.12.7_linux_amd64:$PATH"
 set PATH "/opt/packer/bin/packer:$PATH"
+set PATH "$HOME/.gem/bin:$PATH"
 export PATH
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
@@ -30,3 +31,5 @@ alias gitconf_mics="git config --global user.name Koisell; git config --global u
 export DEV_HOME=$HOME/dev
 export PANTS_COURSIER_REPOS="+['https://nfrancois:mpessh-nexus@sf-nexus.mediarithmics.com/content/groups/global/']"
 export GRALL_HOME="/opt/grallvm/graalvm-ce-1.0.0-rc12"
+export GEM_PATH=(gem environment gempath)
+export GEM_HOME=~/.gem
