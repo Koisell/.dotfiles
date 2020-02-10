@@ -94,14 +94,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm,               xK_p     ), spawn "rofi -modi drun -theme /usr/share/rofi/themes/Monokai.rasi -show drun -show-icons")
+    , ((modm,               xK_space     ), spawn "rofi -modi drun -theme /usr/share/rofi/themes/Monokai.rasi -show drun -show-icons")
     
     -- control keyboard
     , ((modm .|. shiftMask, xK_u), spawn "setxkbmap us")
     , ((modm .|. shiftMask, xK_f), spawn "setxkbmap fr")
-    -- launch gmrun
-    --, ((modm .|. shiftMask, xK_p     ), spawn "gmrun" )
-    , ((modm .|. shiftMask, xK_p     ), spawn "eval \"zsh -ci 'gmrun'\"" ) --inherit PATH intialized by .zshrc
 
     -- screenshot
     , ((0, xK_Print ), spawn "gnome-screenshot" )
@@ -114,10 +111,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_c     ), kill)
 
      -- Rotate through the available layout algorithms
-    , ((modm,               xK_space ), sendMessage NextLayout)
+    , ((modm,               xK_p ), sendMessage NextLayout)
 
     --  Reset the layouts on the current workspace to default
-    , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
+    , ((modm .|. shiftMask, xK_p ), setLayout $ XMonad.layoutHook conf)
 
     -- Resize viewed windows to the correct size
     , ((modm,               xK_n     ), refresh)
