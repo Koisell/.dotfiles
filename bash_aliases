@@ -39,5 +39,6 @@ alias gpush="git push"
 alias gpull="git pull"
 
 # Alias grallvm
-alias gpants="env JDK_HOME=$GRALL_HOME ./pants"
-alias gbt="JAVA_HOME=/opt/graalvm-1.0.0-rc1 sbt"
+alias gpants="JDK_HOME=$GRALL_HOME ./pants"
+alias gbt="env JAVA_HOME=/opt/grall/graalvm-ce-19.2.0 sbt"
+alias gmm="env JAVA_HOME=/opt/grall/graalvm-ce-19.2.0 amm"

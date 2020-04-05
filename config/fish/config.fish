@@ -33,3 +33,5 @@ export PANTS_COURSIER_REPOS="+['https://nfrancois:mpessh-nexus@sf-nexus.mediarit
 export GRALL_HOME="/opt/grallvm/graalvm-ce-1.0.0-rc12"
 export GEM_PATH=(gem environment gempath)
 export GEM_HOME=~/.gem
+export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2G -Xss2M  -Duser.timezone=GMT"
+alias unset 'set --erase'
