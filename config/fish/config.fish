@@ -29,7 +29,6 @@ export PATH
 export HISTSIZE=""
 alias gitconf_mics="git config --global user.name Koisell; git config --global user.email nfrancois@mediarithmics.com;git config --global push.default matching; echo GitHub"
 export DEV_HOME=$HOME/dev
-export PANTS_COURSIER_REPOS="+['https://nfrancois:mpessh-nexus@sf-nexus.mediarithmics.com/content/groups/global/']"
 export GRALL_HOME="/opt/grallvm/graalvm-ce-1.0.0-rc12"
 export GEM_PATH=(gem environment gempath)
 export GEM_HOME=~/.gem
