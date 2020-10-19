@@ -20,6 +20,7 @@ set PATH "/opt/dependency-check/bin:$PATH"
 set PATH "/opt/terraform/terraform_0.12.7_linux_amd64:$PATH"
 set PATH "/opt/packer/bin/packer:$PATH"
 set PATH "$HOME/.gem/bin:$PATH"
+set PATH "/opt/gradle/bin:$PATH"
 export PATH
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
