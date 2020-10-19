@@ -99,6 +99,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- control keyboard
     , ((modm .|. shiftMask, xK_u), spawn "setxkbmap us")
     , ((modm .|. shiftMask, xK_f), spawn "setxkbmap fr")
+    , ((modm .|. shiftMask, xK_n), spawn "setxkbmap us_qwerty-fr")
 
     -- screenshot
     , ((0, xK_Print ), spawn "gnome-screenshot" )
@@ -345,6 +346,7 @@ myStartupHook = do
                   spawn "redshift -l 49:2 -t 6500:2700"
                   spawn "xscreensaver -no-splash"
                   spawn "xrandr --output DVI-D-0 --left-of HDMI-A-0 --primary"
+                  spawn "ibus-daemon"
                   return ()
 
 myLogHook xmproc = dynamicLogWithPP xmobarPP {
