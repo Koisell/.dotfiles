@@ -345,7 +345,7 @@ myStartupHook = do
                   spawn "dropbox start"
                   spawn "redshift -l 49:2 -t 6500:2700"
                   spawn "xscreensaver -no-splash"
-                  spawn "xrandr --output DVI-D-0 --left-of HDMI-A-0 --primary"
+                  spawn "xrandr --output DVI-I-1 --left-of HDMI-A-0 --primary"
                   spawn "ibus-daemon"
                   return ()
 
