@@ -94,7 +94,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm,               xK_space     ), spawn "rofi -modi drun -theme /usr/share/rofi/themes/Monokai.rasi -show drun -show-icons")
+    , ((modm,               xK_space     ), spawn "rofi -show drun")
     
     -- control keyboard
     , ((modm .|. shiftMask, xK_u), spawn "setxkbmap us")
@@ -345,7 +345,7 @@ myStartupHook = do
                   spawn "dropbox start"
                   spawn "redshift -l 49:2 -t 6500:2700"
                   spawn "xscreensaver -no-splash"
-                  spawn "xrandr --output DVI-I-1 --left-of HDMI-A-0 --primary"
+                  -- spawn "xrandr --output DVI-I-1 --left-of HDMI-A-0 --primary"
                   spawn "ibus-daemon"
                   return ()
 

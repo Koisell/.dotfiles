@@ -1,0 +1,6 @@
+configuration {
+  font: "hack 30";
+  theme: "/usr/share/rofi/themes/Monokai.rasi";
+  modi: "drun";
+  show-icons: true;
+}
