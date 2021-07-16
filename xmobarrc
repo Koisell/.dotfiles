@@ -12,10 +12,19 @@ Config { font = "xft:Monospace Regular:size=10:antialias=true"
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
                     , Run Date "%a %_d %b %H:%M" "date" 10
+                    , Run Battery [
+                               	"-t", "<acstatus>: <left>% - <timeleft>",
+                               	"--",
+                               	--"-c", "charge_full",
+                               	"-O", "AC",
+                               	"-o", "Bat",
+                               	"-h", "green",
+                               	"-l", "red"
+                               	] 10
                     , Run StdinReader
                     , Run Com "nmcli" ["-g", "SSID,RATE,BARS", "device", "wifi"] "" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %multicpu% | %memory% * %swap% | <fc=#00ff00>%nmcli%</fc> | <fc=#ee9a00>%date%</fc> | %LFPO%"
+       , template = "%StdinReader% }{ %battery% | %multicpu% | %memory% * %swap% | <fc=#00ff00>%nmcli%</fc> | <fc=#ee9a00>%date%</fc> | %LFPO%"
 }
