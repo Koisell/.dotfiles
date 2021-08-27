@@ -77,7 +77,7 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["1-Term","2-Code","3-Web1","4-Web2","5-Steam","6","7","8","9","0-Com"]
+myWorkspaces    = ["1-Term","2-Code","3-Web1","4-Code2","5-Steam","6","7","8","9","0-Com"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -104,10 +104,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- screenshot
     , ((0, xK_Print ), spawn "gnome-screenshot" )
 
-    -- Music
-    , ((0, xF86XK_AudioMute         ), spawn "amixer set Master toggle")
-    , ((0, xF86XK_AudioRaiseVolume),   spawn "amixer set Master 2%+")
-    , ((0, xF86XK_AudioLowerVolume),   spawn "amixer set Master 2%-")
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
 
@@ -345,6 +341,7 @@ myStartupHook = do
                   spawn "dropbox start"
                   spawn "redshift -l 49:2 -t 6500:2700"
                   spawn "xscreensaver -no-splash"
+                  spawn "xbindkeys"
                   -- spawn "xrandr --output DVI-I-1 --left-of HDMI-A-0 --primary"
                   spawn "ibus-daemon"
                   return ()
