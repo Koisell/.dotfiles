@@ -358,7 +358,7 @@ myLogHook xmproc = dynamicLogWithPP xmobarPP {
 --
 main = do
 	xmproc <- spawnPipe "xmobar"
-	xmonad defaultConfig {
+	xmonad $ ewmhFullscreen $ ewmh defaultConfig {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
