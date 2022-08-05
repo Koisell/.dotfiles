@@ -2,7 +2,6 @@ import Graphics.X11.ExtraTypes.XF86
 import XMonad
 import XMonad.Actions.UpdatePointer
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.SetWMName
 import Data.Monoid
 import System.Exit
@@ -154,12 +153,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Deincrement the number of windows in the master area
     -- QWERTY
- 	, ((modm              , xK_period), sendMessage (IncMasterN (-1)))
- 	-- AZERTY
- 	--, ((modm              , xK_semicolon), sendMessage (IncMasterN (-1)))
+    , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
+        -- AZERTY
+        --, ((modm              , xK_semicolon), sendMessage (IncMasterN (-1)))
 
     , ((modm              , xK_f     ),  sendMessage ToggleLayout)
-    , ((modm              , xK_g     ),  goToSelected defaultGSConfig)
+    , ((modm              , xK_g     ),  goToSelected def)
     , ((modm              , xK_b     ),  sendMessage ToggleStruts)
     -- Toggle the status bar gap
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
@@ -187,7 +186,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     [((m .|. modm, k), windows $ f i)
     -- QWERTY
-	| (i, k) <- zip (XMonad.workspaces conf) ([xK_1 .. xK_9] ++ [xK_0]),
+        | (i, k) <- zip (XMonad.workspaces conf) ([xK_1 .. xK_9] ++ [xK_0]),
     -- AZERTY
        -- | (i, k) <- zip (workspaces conf) [0x26,0xe9,0x22,0x27,0x28,0x2d,0xe8,0x5f,0xe7,0xe0],
          (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
@@ -199,7 +198,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
     -- QWERTY
- 	  | (key, sc) <- zip [xK_w, xK_e, xK_r] [0,1,2]
+        | (key, sc) <- zip [xK_w, xK_e, xK_r] [0,1,2]
     -- AZERTY fix
         -- | (key, sc) <- zip [xK_z, xK_e, xK_r] [1,0,2]
 
@@ -288,7 +287,7 @@ myManageHook = manageDocks <+> composeAll
     , className =? "Google Play Music Desktop Player"  --> viewShift "8-Music"
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
-	where viewShift = doF . liftM2 (.) W.greedyView W.shift
+        where viewShift = doF . liftM2 (.) W.greedyView W.shift
 
 ------------------------------------------------------------------------
 -- Event handling
@@ -302,9 +301,6 @@ myManageHook = manageDocks <+> composeAll
 -- It will add EWMH event handling to your custom event hooks by
 -- combining them with ewmhDesktopsEventHook.
 --
--- myEventHook = mempty
-myEventHook = docksEventHook
---myEventHook = fullscreenEventHook
 ------------------------------------------------------------------------
 -- Status bars and logging
 
@@ -347,9 +343,9 @@ myStartupHook = do
                   return ()
 
 myLogHook xmproc = dynamicLogWithPP xmobarPP {
-							ppOutput = hPutStrLn xmproc,
-                      	  	ppTitle = xmobarColor "green" "" . shorten 50
-                        	} >> updatePointer (0.5, 0.5) (0, 0) >> takeTopFocus
+                                                        ppOutput = hPutStrLn xmproc,
+                                ppTitle = xmobarColor "green" "" . shorten 50
+                                } >> updatePointer (0.5, 0.5) (0, 0)
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -357,8 +353,8 @@ myLogHook xmproc = dynamicLogWithPP xmobarPP {
 -- Run xmonad with the settings you specify. No need to modify this.
 --
 main = do
-	xmproc <- spawnPipe "xmobar"
-	xmonad $ ewmhFullscreen $ ewmh defaultConfig {
+        xmproc <- spawnPipe "xmobar"
+        xmonad $ ewmh def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
@@ -377,7 +373,6 @@ main = do
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook,
-        handleEventHook    = myEventHook,
         logHook            = myLogHook xmproc,
         startupHook        = myStartupHook
     }
