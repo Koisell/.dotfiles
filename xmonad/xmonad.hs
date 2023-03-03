@@ -354,7 +354,7 @@ myLogHook xmproc = dynamicLogWithPP xmobarPP {
 --
 main = do
         xmproc <- spawnPipe "xmobar"
-        xmonad $ ewmh def {
+        xmonad $ ewmh . docks $ def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,

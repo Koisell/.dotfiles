@@ -36,4 +36,6 @@ export GRALL_HOME="/opt/grallvm/graalvm-ce-1.0.0-rc12"
 export GEM_PATH=(gem environment gempath)
 export GEM_HOME=~/.gem
 export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2G -Xss2M  -Duser.timezone=GMT"
+export DEV_HOME=$HOME/dev
+export PATH="$PATH:/home/nfrancois/.local/share/coursier/bin:/home/nfrancois/.cargo/bin"
 alias unset 'set --erase'
