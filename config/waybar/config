@@ -4,6 +4,11 @@
     "modules-center": ["clock", "idle_inhibitor"],
     "modules-right": ["tray", "custom/scratchpad-indicator", "pulseaudio", "custom/power"],
 
+    "hyprland/workspaces": {
+      "active-only": "false",
+      "all-outputs": "true"
+    },
+
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },

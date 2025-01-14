@@ -19,9 +19,9 @@ alias reload_alias="source ~/.bash_aliases"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ping="prettyping --nolegend"
 alias cat="bat"
-alias ls="exa"
-alias vi="vimx"
-alias vim="vimx"
+alias ls="eza"
+alias vi="vim"
+
 
 #Alias streamlink
 alias liveZerator="firefox twitch.tv/zerator/chat; streamlink twitch.tv/zerator "
