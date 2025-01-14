@@ -1,5 +1,3 @@
-enable_experimental_conpty_backend = false
-
 [[keyboard.bindings]]
 action = "Paste"
 key = "Paste"
@@ -568,7 +566,6 @@ unfocused_hollow = true
 log_level = "Warn"
 persistent_logging = false
 print_events = false
-ref_test = false
 render_timer = false
 
 [font]
@@ -584,12 +581,6 @@ y = 0
 
 [mouse]
 hide_when_typing = false
-
-[mouse.double_click]
-threshold = 300
-
-[mouse.triple_click]
-threshold = 300
 
 [scrolling]
 history = 100000
