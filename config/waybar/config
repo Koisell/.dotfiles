@@ -1,8 +1,8 @@
 {
     "output": ["eDP-1"],
     "modules-left": ["hyprland/workspaces", "hyprland/mode"],
-    "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": ["tray", "custom/scratchpad-indicator", "pulseaudio", "custom/power"],
+    "modules-center": ["clock", "custom/spotify", "idle_inhibitor"],
+    "modules-right": ["tray", "custom/scratchpad-indicator", "battery", "network", "pulseaudio", "custom/power"],
 
     "hyprland/workspaces": {
       "active-only": "false",
@@ -32,8 +32,14 @@
     },
     "clock": {
         // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        // "format-alt": "{:%Y-%m-%d}"
-		"on-click": "gnome-calendar"
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "custom/spotify": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/spotify.sh",
+        "exec-if": "pgrep spotify",
+        "escape": true
     },
     "pulseaudio": {
         "format": "{volume}% {icon} ",
@@ -52,6 +58,18 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "{capacity}% ",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
     },
 	"custom/power": {
 		"format": " ",
