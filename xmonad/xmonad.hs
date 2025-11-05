@@ -353,7 +353,7 @@ myLogHook xmproc = dynamicLogWithPP xmobarPP {
 -- Run xmonad with the settings you specify. No need to modify this.
 --
 main = do
-        xmproc <- spawnPipe "xmobar"
+	xmproc <- spawnPipe "xmobar"
         xmonad $ ewmh . docks $ def {
       -- simple stuff
         terminal           = myTerminal,
