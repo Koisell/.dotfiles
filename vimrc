@@ -110,8 +110,8 @@ function! BuildYCM(info)
   endif
 endfunction
     
-# Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-# call plug#end()
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+call plug#end()
 
 " BUNDLE: nerdtree
 nmap <leader>d :NERDTreeToggle<cr>
